@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>유니설치업체 — 스마트 벤딩머신 판매 · 설치 | 상담 010-2069-1741</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+@font-face {
+  font-family: 'GmarketSans';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
+  font-weight: 700;
+  font-display: swap;
+}
+
+:root {
+  --white: #ffffff;
+  --bg: #f7f7f5;
+  --black: #111111;
+  --gray: #666f76;
+  --line: #e6e6e2;
+  --yellow: #ffd400;
+  --yellow-soft: #fff6c8;
+  --mono: 'JetBrains Mono', 'SF Mono', 'Courier New', monospace;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+body {
+  background: var(--white);
+  color: var(--black);
+  font-family: 'Pretendard Variable', Pretendard, -apple-system, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+.display { font-family: 'GmarketSans', 'Pretendard Variable', sans-serif; font-weight: 700; }
+.wrap { max-width: 1000px; margin: 0 auto; padding: 0 22px; }
+a { color: inherit; text-decoration: none; }
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+  outline: 3px solid var(--black); outline-offset: 3px; border-radius: 2px;
+}
+mark {
+  background: linear-gradient(transparent 55%, var(--yellow) 55%);
+  color: inherit; padding: 0 2px;
+}
+
+/* ── Top bar ── */
+.topbar { position: sticky; top: 0; z-index: 60; background: var(--black); color: #fff; }
+.topbar-inner { display: flex; align-items: center; justify-content: space-between; height: 58px; }
+.topbar .brand { font-family: 'GmarketSans', sans-serif; font-size: 16px; }
+.topbar .brand span { color: var(--yellow); }
+.topbar nav { display: flex; gap: 26px; font-size: 14px; color: #c9c9c4; }
+.topbar nav a:hover { color: #fff; }
+@media (max-width: 820px) { .topbar nav { display: none; } }
+.topbar .tel {
+  display: flex; align-items: center; gap: 8px;
+  font-family: var(--mono); font-size: 14px; font-weight: 600;
+  background: var(--yellow); color: var(--black);
+  padding: 8px 16px; border-radius: 100px;
+}
+.topbar .tel:hover { background: #ffe14d; }
+
+/* ── Hero ── */
+.hero {
+  background:
+    radial-gradient(circle at 85% 20%, var(--yellow-soft), transparent 45%),
+    var(--bg);
+  border-bottom: 1px solid var(--line);
+  padding: 78px 0 84px;
+}
+.hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items: center; }
+@media (max-width: 860px) { .hero-grid { grid-template-columns: 1fr; } }
+.badge {
+  display: inline-block;
+  font-family: 'GmarketSans', sans-serif; font-size: 13px;
+  background: var(--black); color: var(--yellow);
+  padding: 7px 20px; border-radius: 100px; margin-bottom: 22px;
+}
+.hero h1 {
+  font-family: 'GmarketSans', sans-serif; font-weight: 700;
+  font-size: clamp(32px, 5vw, 50px); line-height: 1.32; margin-bottom: 18px;
+}
+.hero .lede { font-size: 17px; color: var(--gray); max-width: 460px; margin-bottom: 34px; }
+.hero .lede b { color: var(--black); }
+.hero-cta { display: flex; gap: 12px; flex-wrap: wrap; }
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 16px; font-weight: 700;
+  padding: 15px 30px; border-radius: 6px; border: 2px solid var(--black);
+  cursor: pointer; transition: transform 0.12s, background 0.15s;
+  font-family: inherit;
+}
+.btn:active { transform: scale(0.98); }
+.btn-yellow { background: var(--yellow); color: var(--black); }
+.btn-yellow:hover { background: #ffe14d; }
+.btn-white { background: #fff; color: var(--black); }
+.btn-white:hover { background: var(--yellow-soft); }
+
+/* install scene illustration */
+.scene {
+  position: relative; background: #fff; border: 2px solid var(--black);
+  border-radius: 14px; padding: 30px 26px 0; overflow: hidden;
+  box-shadow: 8px 8px 0 var(--yellow);
+}
+.scene .scene-lbl {
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em;
+  color: var(--gray); margin-bottom: 16px;
+}
+.scene-floor { display: flex; align-items: flex-end; justify-content: center; gap: 20px; }
+.mini-machine {
+  width: 120px; border: 2px solid var(--black); border-bottom: none;
+  border-radius: 8px 8px 0 0; background: #fdfdfc;
+  padding: 8px 8px 0; display: flex; flex-direction: column; gap: 5px;
+}
+.mini-machine .scr {
+  height: 30px; background: var(--black); color: var(--yellow);
+  border-radius: 4px; font-family: var(--mono); font-size: 8px;
+  display: flex; align-items: center; justify-content: center; letter-spacing: 0.1em;
+}
+.mini-machine .r { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; height: 22px; }
+.mini-machine .c { background: #fff; border: 1.5px solid #d8d8d2; border-radius: 3px; }
+.dolly {
+  width: 76px; align-self: flex-end; margin-bottom: 0;
+}
+.check-tags { position: absolute; top: 24px; right: 22px; display: flex; flex-direction: column; gap: 8px; }
+.check-tag {
+  font-family: var(--mono); font-size: 10.5px; font-weight: 600;
+  background: var(--yellow); border: 1.5px solid var(--black);
+  padding: 4px 10px; border-radius: 100px;
+}
+
+/* trust strip */
+.trust { border-top: 2px solid var(--black); background: #fff; }
+.trust-inner { display: grid; grid-template-columns: repeat(4, 1fr); }
+.trust .t {
+  padding: 22px 20px; border-right: 1px solid var(--line); text-align: center;
+}
+.trust .t:last-child { border-right: none; }
+.trust .num { font-family: 'GmarketSans', sans-serif; font-size: 24px; }
+.trust .num span { color: #d3a900; }
+.trust .lbl { font-size: 12.5px; color: var(--gray); }
+@media (max-width: 720px) {
+  .trust-inner { grid-template-columns: 1fr 1fr; }
+  .trust .t:nth-child(2) { border-right: none; }
+  .trust .t:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+}
+
+/* ── Sections ── */
+section { padding: 90px 0; }
+section.alt { background: var(--bg); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.sec-head { text-align: center; max-width: 640px; margin: 0 auto 50px; }
+.kicker {
+  display: inline-block; font-family: var(--mono); font-size: 12px; font-weight: 600;
+  letter-spacing: 0.18em; background: var(--yellow); color: var(--black);
+  padding: 5px 14px; border-radius: 3px; margin-bottom: 16px;
+}
+.sec-head h2 {
+  font-family: 'GmarketSans', sans-serif; font-weight: 700;
+  font-size: clamp(25px, 3.8vw, 36px); line-height: 1.4; margin-bottom: 12px;
+}
+.sec-head p { color: var(--gray); }
+
+/* Services */
+.svc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.svc {
+  border: 2px solid var(--black); border-radius: 12px; background: #fff;
+  padding: 30px 26px; box-shadow: 5px 5px 0 var(--yellow);
+  transition: transform 0.15s;
+}
+.svc:hover { transform: translateY(-4px); }
+.svc .emo { font-size: 30px; margin-bottom: 14px; display: block; }
+.svc h3 { font-size: 17.5px; font-weight: 800; margin-bottom: 8px; }
+.svc p { font-size: 14px; color: var(--gray); }
+.svc ul { list-style: none; margin-top: 14px; border-top: 1px solid var(--line); padding-top: 12px; }
+.svc li { font-size: 13.5px; padding: 4px 0 4px 22px; position: relative; }
+.svc li::before { content: '✓'; position: absolute; left: 0; color: #d3a900; font-weight: 800; }
+@media (max-width: 820px) { .svc-grid { grid-template-columns: 1fr; } }
+
+/* Process */
+.steps { counter-reset: step; max-width: 720px; margin: 0 auto; }
+.step-item {
+  display: grid; grid-template-columns: 88px 1fr; gap: 24px; align-items: start;
+  background: #fff; border: 1px solid var(--line); border-radius: 12px;
+  padding: 28px 30px; margin-bottom: 14px;
+  transition: border-color 0.2s;
+}
+.step-item:hover { border-color: var(--black); }
+.step-item .n {
+  font-family: 'GmarketSans', sans-serif; font-size: 38px; line-height: 1;
+  position: relative; text-align: center;
+}
+.step-item .n::after {
+  content: ''; position: absolute; left: 50%; transform: translateX(-50%);
+  bottom: -5px; width: 36px; height: 9px; background: var(--yellow); z-index: -1;
+}
+.step-item h3 { font-size: 18px; font-weight: 800; margin-bottom: 4px; }
+.step-item p { font-size: 14.5px; color: var(--gray); }
+.step-item .time {
+  display: inline-block; margin-top: 8px;
+  font-family: var(--mono); font-size: 11.5px; font-weight: 600;
+  background: var(--yellow-soft); border: 1px solid #e8d67a;
+  border-radius: 100px; padding: 3px 12px;
+}
+@media (max-width: 560px) {
+  .step-item { grid-template-columns: 1fr; gap: 10px; padding: 24px; }
+  .step-item .n { text-align: left; font-size: 32px; }
+  .step-item .n::after { left: 0; transform: none; }
+}
+
+/* 설치 공간 */
+.space-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
+.space {
+  border: 1.5px solid var(--line); border-radius: 10px;
+  padding: 20px 8px; text-align: center; background: #fff;
+  font-weight: 700; font-size: 14.5px;
+  transition: background 0.15s, border-color 0.15s;
+}
+.space:hover { background: var(--yellow-soft); border-color: var(--black); }
+.space .emo { display: block; font-size: 24px; margin-bottom: 6px; }
+@media (max-width: 820px) { .space-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 480px) { .space-grid { grid-template-columns: repeat(2, 1fr); } }
+
+/* 가격 배너 */
+.price-band { background: var(--black); color: #fff; padding: 84px 0; text-align: center; }
+.price-band h2 {
+  font-family: 'GmarketSans', sans-serif; font-size: clamp(24px, 3.8vw, 36px);
+  line-height: 1.4; margin-bottom: 30px;
+}
+.price-card {
+  max-width: 460px; margin: 0 auto 22px;
+  background: #fff; color: var(--black); border-radius: 14px;
+  padding: 36px 34px; box-shadow: 0 0 0 6px rgba(255, 212, 0, 0.35);
+}
+.price-card .lbl { font-size: 14px; color: var(--gray); }
+.price-card .amount { font-family: 'GmarketSans', sans-serif; font-size: clamp(36px, 6vw, 48px); line-height: 1.25; }
+.price-card .amount small { font-size: 17px; }
+.price-card .term { font-family: var(--mono); font-size: 13px; color: var(--gray); margin-top: 4px; }
+.price-card .divider { height: 1px; background: var(--line); margin: 22px 0; }
+.price-card ul { list-style: none; text-align: left; }
+.price-card li { font-size: 14.5px; padding: 5px 0 5px 26px; position: relative; }
+.price-card li::before { content: '✓'; position: absolute; left: 2px; color: #d3a900; font-weight: 800; }
+.price-band .note { font-size: 14px; color: #a5a5a0; }
+
+/* FAQ */
+.faq { max-width: 720px; margin: 0 auto; }
+details {
+  background: #fff; border: 1px solid var(--line); border-radius: 10px;
+  margin-bottom: 12px; overflow: hidden;
+}
+details[open] { border-color: var(--black); }
+summary {
+  cursor: pointer; padding: 18px 22px; font-weight: 700; font-size: 15.5px;
+  list-style: none; display: flex; justify-content: space-between; gap: 16px;
+}
+summary::-webkit-details-marker { display: none; }
+summary::after { content: '+'; color: #d3a900; font-size: 20px; font-weight: 700; }
+details[open] summary::after { content: '−'; }
+details .ans { padding: 0 22px 20px; font-size: 14.5px; color: var(--gray); }
+
+/* Contact */
+.contact { text-align: center; padding: 92px 0 100px; }
+.contact h2 {
+  font-family: 'GmarketSans', sans-serif; font-size: clamp(26px, 4.2vw, 40px);
+  line-height: 1.4; margin-bottom: 12px;
+}
+.contact p { color: var(--gray); margin-bottom: 32px; }
+.tel-big {
+  display: inline-flex; align-items: center; gap: 14px;
+  font-family: var(--mono); font-size: clamp(22px, 4vw, 32px); font-weight: 700;
+  background: var(--black); color: var(--yellow);
+  padding: 20px 44px; border-radius: 100px; transition: transform 0.12s;
+}
+.tel-big:hover { transform: scale(1.03); }
+.contact .sub { margin-top: 16px; font-size: 14px; color: var(--gray); }
+
+/* Footer */
+footer { background: var(--black); color: #8f8f8a; padding: 34px 0 100px; font-size: 13px; }
+.foot { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; line-height: 1.9; }
+
+/* 설치 후기 */
+.review-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.review {
+  border: 1.5px solid var(--line); border-radius: 12px; overflow: hidden;
+  background: #fff; display: flex; flex-direction: column;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.review:hover { border-color: var(--black); transform: translateY(-3px); }
+.review .ph {
+  aspect-ratio: 4 / 3; overflow: hidden; background: var(--bg);
+  border-bottom: 1.5px solid var(--line);
+}
+.review .ph img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.review .body { padding: 20px 22px 22px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+.review .loc {
+  display: flex; align-items: center; justify-content: space-between; gap: 10px;
+}
+.review .loc b { font-size: 15.5px; }
+.review .stars { color: #f5b100; font-size: 13px; letter-spacing: 2px; white-space: nowrap; }
+.review .quote { font-size: 14px; color: var(--gray); }
+.review .type {
+  align-self: flex-start;
+  font-family: var(--mono); font-size: 10.5px; font-weight: 600; letter-spacing: 0.1em;
+  background: var(--yellow-soft); border: 1px solid #e8d67a; border-radius: 100px;
+  padding: 3px 11px;
+}
+.review-wide { grid-column: span 3; }
+.review-wide .ph { aspect-ratio: 21 / 9; }
+@media (max-width: 820px) {
+  .review-grid { grid-template-columns: 1fr 1fr; }
+  .review-wide { grid-column: span 2; }
+}
+@media (max-width: 520px) {
+  .review-grid { grid-template-columns: 1fr; }
+  .review-wide { grid-column: span 1; }
+  .review-wide .ph { aspect-ratio: 16 / 9; }
+}
+
+/* Sticky call bar */
+.callbar {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 70; display: none;
+  background: var(--yellow); border-top: 2px solid var(--black);
+}
+.callbar a {
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  padding: 16px; font-weight: 800; font-size: 16px;
+  font-family: 'GmarketSans', sans-serif;
+}
+@media (max-width: 720px) { .callbar { display: block; } }
+
+.reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.55s ease, transform 0.55s ease; }
+.reveal.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; } }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap topbar-inner">
+    <div class="brand">유니설치업체 <span>스마트 벤딩머신</span></div>
+    <nav aria-label="주요 메뉴">
+      <a href="#service">설치 서비스</a>
+      <a href="#process">설치 절차</a>
+      <a href="#reviews">설치 후기</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="tel" href="tel:010-2069-1741">☎ 010-2069-1741</a>
+  </div>
+</div>
+
+<main>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="badge">유니설치업체 — 스마트 벤딩머신 판매 · 설치</div>
+      <h1 class="display">자판기 구매부터<br><mark>설치까지</mark>, 전화 한 통이면<br>끝납니다</h1>
+      <p class="lede">멀티 키오스크 자판기 <b>판매 전문</b>. 구매하시면 현장 확인, 기기 반입, 전원·통신 연결, 트레이 세팅, 관리 앱 교육까지 <b>설치가 전부 포함</b>됩니다.</p>
+      <div class="hero-cta">
+        <a class="btn btn-yellow" href="tel:010-2069-1741">☎ 구매 상담 전화하기</a>
+        <a class="btn btn-white" href="#process">설치 절차 보기 ↓</a>
+      </div>
+    </div>
+    <div class="scene reveal" aria-hidden="true">
+      <div class="scene-lbl">INSTALLATION IN PROGRESS…</div>
+      <div class="check-tags">
+        <span class="check-tag">✓ 수평 OK</span>
+        <span class="check-tag">✓ 220V OK</span>
+        <span class="check-tag">✓ Wi-Fi OK</span>
+      </div>
+      <div class="scene-floor">
+        <div class="mini-machine">
+          <div class="scr">TOUCH</div>
+          <div class="r"><div class="c"></div><div class="c"></div><div class="c"></div></div>
+          <div class="r"><div class="c"></div><div class="c"></div><div class="c"></div></div>
+          <div class="r"><div class="c"></div><div class="c"></div><div class="c"></div></div>
+          <div class="r"><div class="c"></div><div class="c"></div><div class="c"></div></div>
+        </div>
+        <svg class="dolly" viewBox="0 0 80 110" xmlns="http://www.w3.org/2000/svg">
+          <rect x="14" y="8" width="8" height="80" rx="3" fill="none" stroke="#111" stroke-width="3"/>
+          <line x1="18" y1="88" x2="62" y2="88" stroke="#111" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="26" cy="98" r="8" fill="#ffd400" stroke="#111" stroke-width="3"/>
+          <circle cx="54" cy="98" r="8" fill="#ffd400" stroke="#111" stroke-width="3"/>
+          <line x1="22" y1="16" x2="40" y2="16" stroke="#111" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="trust">
+  <div class="wrap trust-inner">
+    <div class="t"><div class="num">당일<span>!</span></div><div class="lbl">상담 → 견적 회신</div></div>
+    <div class="t"><div class="num">2~4<span>시간</span></div><div class="lbl">평균 설치 소요</div></div>
+    <div class="t"><div class="num">전국</div><div class="lbl">설치 · 이전 · A/S</div></div>
+    <div class="t"><div class="num">100<span>%</span></div><div class="lbl">상품 반품 지원</div></div>
+  </div>
+</div>
+
+<!-- ══ 설치 서비스 ══ -->
+<section id="service">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">SERVICE</span>
+      <h2 class="display">자판기 구매 시,<br>여기까지 전부 포함입니다</h2>
+      <p>기기 판매부터 설치, 세팅, 사후 관리까지 한 곳에서 책임집니다. 바퀴 달린 이동식이라 자리 이동도 빠릅니다.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc reveal">
+        <span class="emo">📦</span>
+        <h3>자판기 구매 + 무상 설치</h3>
+        <p>기기 구매 시 설치·세팅이 모두 포함된 원스톱 진행입니다.</p>
+        <ul>
+          <li>키오스크 내장형 멀티 자판기</li>
+          <li>트레이 커스터마이징 세팅</li>
+          <li>카드·간편결제 단말 연동</li>
+          <li>관리 앱 설치 · 사용 교육</li>
+        </ul>
+      </div>
+      <div class="svc reveal">
+        <span class="emo">🚚</span>
+        <h3>구매 고객 이전 설치</h3>
+        <p>구매 고객이 매장을 옮기거나 배치를 바꿀 때도 안전하게 옮겨 드립니다.</p>
+        <ul>
+          <li>기기 철거 · 운송 · 재설치</li>
+          <li>바퀴 이동식이라 이전 부담 최소</li>
+          <li>재설치 후 작동 점검</li>
+        </ul>
+      </div>
+      <div class="svc reveal">
+        <span class="emo">🛠️</span>
+        <h3>세팅 · 유지관리</h3>
+        <p>설치 후에도 자판기가 계속 잘 벌게 관리해 드립니다.</p>
+        <ul>
+          <li>무상 광고 송출 세팅</li>
+          <li>상품 공급 · 반품 100% 지원</li>
+          <li>원격 점검 · A/S 접수 대행</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 설치 절차 ══ -->
+<section id="process" class="alt">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">PROCESS</span>
+      <h2 class="display">구매부터 설치까지<br>이렇게 진행됩니다</h2>
+      <p>사진 한 장으로 구매 상담이 시작되고, 설치는 하루면 끝납니다.</p>
+    </div>
+    <div class="steps">
+      <div class="step-item reveal">
+        <div class="n display">1</div>
+        <div>
+          <h3>구매 상담 (전화 · 문자)</h3>
+          <p>설치할 자리 사진과 주소를 보내주세요. 설치 가능 여부와 구매 견적을 안내해 드립니다. 2대 이상 설치 시 할인 혜택도 함께 안내해 드려요.</p>
+          <span class="time">당일 회신</span>
+        </div>
+      </div>
+      <div class="step-item reveal">
+        <div class="n display">2</div>
+        <div>
+          <h3>현장 확인</h3>
+          <p>설치 자리 폭, 220V 콘센트, 인터넷(Wi-Fi/유선), 반입 경로(출입문·엘리베이터)를 확인합니다.</p>
+          <span class="time">약 30분</span>
+        </div>
+      </div>
+      <div class="step-item reveal">
+        <div class="n display">3</div>
+        <div>
+          <h3>기기 반입 · 설치</h3>
+          <p>바퀴 달린 이동식 기기라 반입이 빠릅니다. 수평 시공, 전원·통신 연결, 결제 단말 연동까지 한 번에 진행합니다.</p>
+          <span class="time">평균 2~4시간</span>
+        </div>
+      </div>
+      <div class="step-item reveal">
+        <div class="n display">4</div>
+        <div>
+          <h3>트레이 세팅 · 상품 진열</h3>
+          <p>판매할 상품에 맞춰 트레이를 커스터마이징하고, 원하시면 판매 상품 공급까지 함께 세팅해 드립니다.</p>
+          <span class="time">설치 당일</span>
+        </div>
+      </div>
+      <div class="step-item reveal">
+        <div class="n display">5</div>
+        <div>
+          <h3>앱 교육 · 인도</h3>
+          <p>폰으로 매출·재고·가격을 관리하는 방법을 알려드립니다. 이제 자판기가 돈 벌어주는 삶, 시작입니다.</p>
+          <span class="time">교육 포함</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 설치 공간 ══ -->
+<section id="spaces">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">ALREADY INSTALLED</span>
+      <h2 class="display">이미 다양한 공간에<br>설치되고 있습니다</h2>
+    </div>
+    <div class="space-grid reveal">
+      <div class="space"><span class="emo">🏥</span>병원</div>
+      <div class="space"><span class="emo">🖥️</span>PC방</div>
+      <div class="space"><span class="emo">☕</span>카페</div>
+      <div class="space"><span class="emo">🛏️</span>무인숙소</div>
+      <div class="space"><span class="emo">📚</span>스터디카페</div>
+      <div class="space"><span class="emo">🏫</span>학교</div>
+      <div class="space"><span class="emo">🏛️</span>관공서</div>
+      <div class="space"><span class="emo">🏢</span>오피스</div>
+      <div class="space"><span class="emo">⚽</span>풋살구장</div>
+      <div class="space"><span class="emo">💪</span>헬스장</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 설치 후기 ══ -->
+<section id="reviews">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">REVIEW</span>
+      <h2 class="display">실제 설치 현장,<br>사장님들의 후기입니다</h2>
+      <p>노래방부터 숙소, 세차장까지 — 전국 곳곳에 설치된 실제 모습입니다.</p>
+    </div>
+    <div class="review-grid">
+      <div class="review reveal">
+        <div class="ph"><img src="images/review-karaoke.jpg" alt="코인노래방에 설치된 스마트 벤딩머신" loading="lazy"></div>
+        <div class="body">
+          <span class="type">노래방</span>
+          <div class="loc"><b>코인노래방 설치</b><span class="stars">★★★★★</span></div>
+          <p class="quote">"카운터 없앤 자리에 딱이에요. 손님들이 노래 부르다 나와서 음료 뽑아 가니 매출이 따로 잡힙니다."</p>
+        </div>
+      </div>
+      <div class="review reveal">
+        <div class="ph"><img src="images/review-sokcho-1.jpg" alt="속초 메이트힐 라운지에 설치된 벤딩머신 2대" loading="lazy"></div>
+        <div class="body">
+          <span class="type">숙소 · 라운지</span>
+          <div class="loc"><b>속초 메이트힐</b><span class="stars">★★★★★</span></div>
+          <p class="quote">"음료·스낵 2대를 나란히 설치했어요. 라운지 인테리어랑 잘 어울려서 투숙객 반응이 좋습니다."</p>
+        </div>
+      </div>
+      <div class="review reveal">
+        <div class="ph"><img src="images/review-jeju-theblue.jpg" alt="제주 더블루에 설치된 벤딩머신" loading="lazy"></div>
+        <div class="body">
+          <span class="type">숙소</span>
+          <div class="loc"><b>제주 더블루</b><span class="stars">★★★★★</span></div>
+          <p class="quote">"밤늦게 음료 찾는 손님이 많았는데 이제 자판기가 알아서 팝니다. 화면 캐릭터도 귀엽다고 하세요."</p>
+        </div>
+      </div>
+      <div class="review reveal">
+        <div class="ph"><img src="images/review-jeju-mulwat.jpg" alt="제주 관의물왓에 설치된 스마트 자판기" loading="lazy"></div>
+        <div class="body">
+          <span class="type">휴게 공간</span>
+          <div class="loc"><b>제주 관의물왓</b><span class="stars">★★★★★</span></div>
+          <p class="quote">"라면 자판기 옆에 나란히 설치했어요. 음료·간식·소품까지 한 대에서 팔 수 있어 좋습니다."</p>
+        </div>
+      </div>
+      <div class="review reveal">
+        <div class="ph"><img src="images/review-carwash.jpg" alt="인제 디케이워시 세차장에 설치된 세차용품 자판기" loading="lazy"></div>
+        <div class="body">
+          <span class="type">세차장</span>
+          <div class="loc"><b>인제 디케이워시</b><span class="stars">★★★★★</span></div>
+          <p class="quote">"세차용품이랑 IC카드 발급까지 자판기로 해결했습니다. 야외 설치도 문제없이 진행해 주셨어요."</p>
+        </div>
+      </div>
+      <div class="review reveal">
+        <div class="ph"><img src="images/review-daiclo.jpg" alt="무인매장에 설치된 벤딩머신 2대" loading="lazy"></div>
+        <div class="body">
+          <span class="type">무인매장</span>
+          <div class="loc"><b>무인 간식매장</b><span class="stars">★★★★★</span></div>
+          <p class="quote">"매장 상품에 맞춰 트레이를 다르게 세팅해 주셔서 스낵과 식품을 종류별로 나눠 팔고 있어요."</p>
+        </div>
+      </div>
+      <div class="review reveal">
+        <div class="ph"><img src="images/review-taxi-lounge.jpg" alt="기사 휴게 라운지에 설치된 자판기" loading="lazy"></div>
+        <div class="body">
+          <span class="type">기사 라운지</span>
+          <div class="loc"><b>택시 기사 휴게공간</b><span class="stars">★★★★★</span></div>
+          <p class="quote">"기사님들 쉬는 공간에 설치했는데 24시간 돌아가니 관리 부담 없이 운영 중입니다."</p>
+        </div>
+      </div>
+      <div class="review reveal">
+        <div class="ph"><img src="images/review-tray-snack.jpg" alt="스낵 상품으로 커스터마이징된 트레이 내부" loading="lazy"></div>
+        <div class="body">
+          <span class="type">트레이 세팅</span>
+          <div class="loc"><b>스낵 구성 예시</b><span class="stars">★★★★★</span></div>
+          <p class="quote">과자, 김, 건강식품까지 — 상품 크기에 맞춰 칸을 조절한 실제 트레이 세팅 모습입니다.</p>
+        </div>
+      </div>
+      <div class="review reveal">
+        <div class="ph"><img src="images/review-tray-drink.jpg" alt="음료 파우치로 커스터마이징된 트레이 내부" loading="lazy"></div>
+        <div class="body">
+          <span class="type">트레이 세팅</span>
+          <div class="loc"><b>음료 구성 예시</b><span class="stars">★★★★★</span></div>
+          <p class="quote">파우치 음료, 젤리, 즉석식품까지 넉넉하게 들어가는 음료 중심 세팅 예시입니다.</p>
+        </div>
+      </div>
+      <div class="review review-wide reveal">
+        <div class="ph"><img src="images/review-sokcho-2.jpg" alt="속초 메이트힐 라운지 전경에 설치된 벤딩머신" loading="lazy"></div>
+        <div class="body">
+          <span class="type">숙소 · 라운지</span>
+          <div class="loc"><b>속초 메이트힐 라운지 전경</b><span class="stars">★★★★★</span></div>
+          <p class="quote">"전자레인지 코너 옆에 음료·스낵 자판기를 배치했더니 라운지가 작은 편의점이 됐어요. 투숙객 만족도가 확실히 올라갔습니다."</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 가격 ══ -->
+<section class="price-band">
+  <div class="wrap">
+    <span class="kicker reveal">PRICE</span>
+    <h2 class="display reveal">시중 자판기 중<br>가장 착한 가격</h2>
+    <div class="price-card reveal">
+      <div class="lbl">스마트 벤딩머신 구매 (설치비 포함)</div>
+      <div class="amount display">월 23<small>만 원</small></div>
+      <div class="term">× 36개월 (VAT 별도)</div>
+      <div class="divider"></div>
+      <ul>
+        <li>설치비 포함 가격 · 별도 설치비 없음</li>
+        <li>일반 동전 자판기보다 훨씬 저렴</li>
+        <li>설치 · 세팅 · 앱 교육 포함</li>
+        <li>트레이 커스터마이징 포함</li>
+        <li>무상 광고 송출 · 상품 공급 · 반품 100% 지원</li>
+      </ul>
+    </div>
+    <p class="note reveal">※ 2대 이상 설치 시 할인 가능합니다. 자세한 내용은 전화로 문의해 주세요.</p>
+  </div>
+</section>
+
+<!-- ══ FAQ ══ -->
+<section id="faq" class="alt">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">FAQ</span>
+      <h2 class="display">자주 묻는 질문</h2>
+    </div>
+    <div class="faq reveal">
+      <details>
+        <summary>기기 없이 설치만 맡길 수 있나요?</summary>
+        <div class="ans">설치만 단독으로는 진행하지 않습니다. 저희 스마트 벤딩머신을 구매하시는 고객님께 설치·세팅·교육을 모두 포함해 드리는 방식입니다.</div>
+      </details>
+      <details>
+        <summary>구매하면 설치까지 준비할 게 있나요?</summary>
+        <div class="ans">설치 자리(폭 1m 내외), 220V 콘센트, 인터넷(Wi-Fi 가능)만 있으면 됩니다. 나머지는 현장 확인 때 저희가 점검해 드립니다.</div>
+      </details>
+      <details>
+        <summary>팔 상품이 아직 없는데 가능한가요?</summary>
+        <div class="ans">가능합니다. 판매 상품을 저희가 공급해 드리고, 안 팔린 상품은 100% 반품이 가능해 재고 부담 없이 시작할 수 있습니다.</div>
+      </details>
+      <details>
+        <summary>구매 후 자리 이동이 필요하면요?</summary>
+        <div class="ans">기기에 바퀴가 있어 매장 안 이동은 직접 하실 수 있고, 다른 매장으로의 이전 설치는 구매 고객 대상으로 철거·운송·재설치까지 저희가 진행합니다.</div>
+      </details>
+      <details>
+        <summary>관리가 어렵지 않을까요?</summary>
+        <div class="ans">스마트폰 앱으로 매출, 재고, 가격을 원격 관리합니다. 설치 당일 사용법을 교육해 드리고, 이후에도 전화로 언제든 도와드립니다.</div>
+      </details>
+      <details>
+        <summary>2대 이상 설치하면 할인이 되나요?</summary>
+        <div class="ans">네. 2대 이상 설치 시 할인이 가능합니다. 설치 공간과 대수를 알려주시면 상담 시 할인 조건을 안내해 드립니다.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CTA ══ -->
+<section class="contact">
+  <div class="wrap reveal">
+    <h2 class="display">설치 자리 사진 한 장 찍어서<br>지금 보내주세요</h2>
+    <p>문자·전화 상담 모두 가능합니다. 당일 안에 설치 가능 여부와 구매 견적을 알려드립니다.</p>
+    <a class="tel-big" href="tel:010-2069-1741">☎ 010-2069-1741</a>
+    <p class="sub">터치하면 바로 전화 연결됩니다</p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div>
+      <b style="color:#fff;">유니설치업체</b><br>
+      스마트 벤딩머신 판매 · 설치 · 세팅 · 유지관리 | 상담 010-2069-1741
+    </div>
+    <div>© 2026 유니설치업체. All rights reserved.</div>
+  </div>
+</footer>
+
+<div class="callbar">
+  <a href="tel:010-2069-1741">☎ 010-2069-1741 구매 상담 연결</a>
+</div>
+
+<script>
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
