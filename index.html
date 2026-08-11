@@ -59,6 +59,7 @@ mark {
 .topbar .brand span { color: var(--yellow); }
 .topbar nav { display: flex; gap: 26px; font-size: 14px; color: #c9c9c4; }
 .topbar nav a:hover { color: #fff; }
+.topbar nav a.active { color: var(--yellow); font-weight: 700; }
 @media (max-width: 820px) { .topbar nav { display: none; } }
 .topbar .tel {
   display: flex; align-items: center; gap: 8px;
@@ -401,14 +402,14 @@ footer { background: var(--black); color: #8f8f8a; padding: 34px 0 100px; font-s
 
 <div class="topbar">
   <div class="wrap topbar-inner">
-    <div class="brand">밴딩벅 <span>스마트 벤딩머신</span></div>
+    <div class="brand" style="cursor:pointer;" onclick="switchSection('home')">밴딩벅 <span>스마트 벤딩머신</span></div>
     <nav aria-label="주요 메뉴">
-      <a href="#service">자판기</a>
-      <a href="#demolition">철거/원상복구</a>
-      <a href="#pos-kiosk">포스기·키오스크·테이블오더</a>
-      <a href="#card-terminal">카드단말기</a>
-      <a href="#reviews">설치 후기</a>
-      <a href="#faq">FAQ</a>
+      <a href="#service" onclick="switchSection('service');return false;">자판기</a>
+      <a href="#demolition" onclick="switchSection('demolition');return false;">철거/원상복구</a>
+      <a href="#pos-kiosk" onclick="switchSection('pos-kiosk');return false;">포스기·키오스크·테이블오더</a>
+      <a href="#card-terminal" onclick="switchSection('card-terminal');return false;">카드단말기</a>
+      <a href="#reviews" onclick="switchSection('reviews');return false;">설치 후기</a>
+      <a href="#faq" onclick="switchSection('faq');return false;">FAQ</a>
     </nav>
     <a class="tel" href="tel:010-2069-1741">☎ 010-2069-1741</a>
   </div>
@@ -416,6 +417,7 @@ footer { background: var(--black); color: #8f8f8a; padding: 34px 0 100px; font-s
 
 <main>
 
+<div class="view" id="view-home">
 <!-- ══ HERO ══ -->
 <section class="hero">
   <div class="wrap hero-grid">
@@ -425,7 +427,7 @@ footer { background: var(--black); color: #8f8f8a; padding: 34px 0 100px; font-s
       <p class="lede">멀티 키오스크 자판기 <b>판매 전문</b>. 구매하시면 현장 확인, 기기 반입, 전원·통신 연결, 트레이 세팅, 관리 앱 교육까지 <b>설치가 전부 포함</b>됩니다.</p>
       <div class="hero-cta">
         <a class="btn btn-yellow" href="tel:010-2069-1741">☎ 구매 상담 전화하기</a>
-        <a class="btn btn-white" href="#process">설치 절차 보기 ↓</a>
+        <a class="btn btn-white" href="#service" onclick="switchSection('service');return false;">설치 절차 보기 ↓</a>
       </div>
     </div>
     <div class="scene reveal" aria-hidden="true">
@@ -464,7 +466,33 @@ footer { background: var(--black); color: #8f8f8a; padding: 34px 0 100px; font-s
   </div>
 </div>
 
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">SERVICES</span>
+      <h2>어떤 서비스가 필요하세요?</h2>
+      <p>업종에 맞춰 필요한 항목을 눌러 자세히 확인하세요.</p>
+    </div>
+    <div class="home-quick-grid">
+      <a class="home-quick-card" href="#" onclick="switchSection('service');return false;">
+        <span class="ico">🥤</span><h3>자판기</h3><p>스마트 벤딩머신 판매·설치</p>
+      </a>
+      <a class="home-quick-card" href="#" onclick="switchSection('demolition');return false;">
+        <span class="ico">🔨</span><h3>철거/원상복구</h3><p>매장·사무실 철거 전문</p>
+      </a>
+      <a class="home-quick-card" href="#" onclick="switchSection('pos-kiosk');return false;">
+        <span class="ico">🖥️</span><h3>포스기·키오스크·테이블오더</h3><p>무인 주문·매장 시스템</p>
+      </a>
+      <a class="home-quick-card" href="#" onclick="switchSection('card-terminal');return false;">
+        <span class="ico">💳</span><h3>카드단말기</h3><p>유선·무선·블루투스 결제기</p>
+      </a>
+    </div>
+  </div>
+</section>
+</div>
+
 <!-- ══ 설치 서비스 ══ -->
+<div class="view" id="view-service" style="display:none;">
 <section id="service">
   <div class="wrap">
     <div class="sec-head reveal">
@@ -508,7 +536,10 @@ footer { background: var(--black); color: #8f8f8a; padding: 34px 0 100px; font-s
   </div>
 </section>
 
+</div>
+
 <!-- ══ 철거·원상복구 ══ -->
+<div class="view" id="view-demolition" style="display:none;">
 <section id="demolition">
   <div class="wrap">
     <div class="sec-head reveal">
@@ -530,7 +561,10 @@ footer { background: var(--black); color: #8f8f8a; padding: 34px 0 100px; font-s
   </div>
 </section>
 
+</div>
+
 <!-- ══ 포스기·키오스크·테이블오더 ══ -->
+<div class="view" id="view-pos-kiosk" style="display:none;">
 <section id="pos-kiosk" class="alt">
   <div class="wrap">
     <div class="sec-head reveal">
@@ -740,7 +774,10 @@ footer { background: var(--black); color: #8f8f8a; padding: 34px 0 100px; font-s
   </div>
 </section>
 
+</div>
+
 <!-- ══ 카드단말기 ══ -->
+<div class="view" id="view-card-terminal" style="display:none;">
 <section id="card-terminal">
   <div class="wrap">
     <div class="sec-head reveal">
@@ -839,7 +876,10 @@ footer { background: var(--black); color: #8f8f8a; padding: 34px 0 100px; font-s
   </div>
 </section>
 
+</div>
+
 <!-- ══ 설치 절차 ══ -->
+<div class="view" id="view-process-spaces" style="display:none;">
 <section id="process" class="alt">
   <div class="wrap">
     <div class="sec-head reveal">
@@ -914,7 +954,10 @@ footer { background: var(--black); color: #8f8f8a; padding: 34px 0 100px; font-s
   </div>
 </section>
 
+</div>
+
 <!-- ══ 설치 후기 ══ -->
+<div class="view" id="view-reviews-regions" style="display:none;">
 <section id="reviews">
   <div class="wrap">
     <div class="sec-head reveal">
@@ -1046,7 +1089,10 @@ footer { background: var(--black); color: #8f8f8a; padding: 34px 0 100px; font-s
   </div>
 </section>
 
+</div>
+
 <!-- ══ 가격 ══ -->
+<div class="view" id="view-priceband" style="display:none;">
 <section class="price-band">
   <div class="wrap">
     <span class="kicker reveal">PRICE</span>
@@ -1067,8 +1113,10 @@ footer { background: var(--black); color: #8f8f8a; padding: 34px 0 100px; font-s
     <p class="note reveal">※ 2대 이상 설치 시 할인 가능합니다. 자세한 내용은 전화로 문의해 주세요.</p>
   </div>
 </section>
+</div>
 
 <!-- ══ FAQ ══ -->
+<div class="view" id="view-faq" style="display:none;">
 <section id="faq" class="alt">
   <div class="wrap">
     <div class="sec-head reveal">
@@ -1103,6 +1151,7 @@ footer { background: var(--black); color: #8f8f8a; padding: 34px 0 100px; font-s
     </div>
   </div>
 </section>
+</div>
 
 <!-- ══ CTA ══ -->
 <section class="contact">
@@ -1135,6 +1184,30 @@ const io = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
 }, { threshold: 0.12 });
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+const TAB_VIEWS = {
+  home: ['view-home'],
+  service: ['view-service', 'view-process-spaces', 'view-priceband'],
+  demolition: ['view-demolition'],
+  'pos-kiosk': ['view-pos-kiosk'],
+  'card-terminal': ['view-card-terminal'],
+  reviews: ['view-reviews-regions'],
+  faq: ['view-faq']
+};
+function switchSection(tab) {
+  const ids = TAB_VIEWS[tab] || TAB_VIEWS.home;
+  document.querySelectorAll('.view').forEach(v => { v.style.display = 'none'; });
+  ids.forEach(id => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.style.display = 'block';
+    el.querySelectorAll('.reveal').forEach(r => r.classList.add('in'));
+  });
+  document.querySelectorAll('nav[aria-label="주요 메뉴"] a').forEach(a => a.classList.remove('active'));
+  const navLink = document.querySelector('nav[aria-label="주요 메뉴"] a[href="#' + tab + '"]');
+  if (navLink) navLink.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'instant' });
+}
 </script>
 </body>
 </html>
