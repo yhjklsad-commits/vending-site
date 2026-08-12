@@ -462,7 +462,6 @@ footer { background: var(--black); color: #8f8f8a; padding: 34px 0 100px; font-s
       <a href="#pos-kiosk" onclick="switchSection('pos-kiosk');return false;">포스기·키오스크·테이블오더</a>
       <a href="#card-terminal" onclick="switchSection('card-terminal');return false;">카드단말기</a>
       <a href="#product-news" onclick="switchSection('product-news');return false;">상품별 설명</a>
-      <a href="#reviews" onclick="switchSection('reviews');return false;">설치 후기</a>
     </nav>
     <a class="tel" href="tel:010-2069-1741">☎ 010-2069-1741</a>
   </div>
@@ -649,6 +648,19 @@ footer { background: var(--black); color: #8f8f8a; padding: 34px 0 100px; font-s
         <summary>견적 상담은 어떻게 신청하나요?</summary>
         <div class="ans">전화 주시면 현장 상황을 간단히 확인한 후 방문 견적 일정을 안내해 드립니다.</div>
       </details>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">REVIEW</span>
+      <h2 class="display">철거/원상복구 설치 후기</h2>
+    </div>
+    <div class="news-empty">
+      <span class="emo">🛠️</span>
+      철거/원상복구 후기를 준비 중입니다.<br>곧 만나보실 수 있어요.
     </div>
   </div>
 </section>
@@ -901,6 +913,19 @@ footer { background: var(--black); color: #8f8f8a; padding: 34px 0 100px; font-s
   </div>
 </section>
 
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">REVIEW</span>
+      <h2 class="display">포스기·키오스크·테이블오더 설치 후기</h2>
+    </div>
+    <div class="news-empty">
+      <span class="emo">🖥️</span>
+      포스기·키오스크·테이블오더 후기를 준비 중입니다.<br>곧 만나보실 수 있어요.
+    </div>
+  </div>
+</section>
+
 </div>
 
 <!-- ══ 카드단말기 ══ -->
@@ -1038,6 +1063,19 @@ footer { background: var(--black); color: #8f8f8a; padding: 34px 0 100px; font-s
   </div>
 </section>
 
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">REVIEW</span>
+      <h2 class="display">카드단말기 설치 후기</h2>
+    </div>
+    <div class="news-empty">
+      <span class="emo">💳</span>
+      카드단말기 설치 후기를 준비 중입니다.<br>곧 만나보실 수 있어요.
+    </div>
+  </div>
+</section>
+
 </div>
 
 <!-- ══ 설치 절차 ══ -->
@@ -1124,7 +1162,7 @@ footer { background: var(--black); color: #8f8f8a; padding: 34px 0 100px; font-s
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="kicker">REVIEW</span>
-      <h2 class="display">실제 설치 현장,<br>사장님들의 후기입니다</h2>
+      <h2 class="display">자판기 실제 설치 현장,<br>사장님들의 후기입니다</h2>
       <p>노래방부터 숙소, 세차장까지 — 전국 곳곳에 설치된 실제 모습입니다.</p>
     </div>
     <div class="review-grid">
@@ -1371,12 +1409,11 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
 const TAB_VIEWS = {
   home: ['view-home'],
-  service: ['view-service', 'view-process-spaces', 'view-priceband'],
+  service: ['view-service', 'view-process-spaces', 'view-priceband', 'view-reviews-regions'],
   demolition: ['view-demolition'],
   'pos-kiosk': ['view-pos-kiosk'],
   'card-terminal': ['view-card-terminal'],
-  'product-news': ['view-product-news'],
-  reviews: ['view-reviews-regions']
+  'product-news': ['view-product-news']
 };
 function switchSection(tab) {
   const ids = TAB_VIEWS[tab] || TAB_VIEWS.home;
