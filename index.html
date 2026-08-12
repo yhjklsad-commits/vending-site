@@ -6,6 +6,7 @@
 <meta name="naver-site-verification" content="62985c2a29197df38cafb4b17bba6a93a6d3b777" />
 <meta name="description" content="밴딩벅 — 카드단말기·포스기·키오스크·테이블오더·철거원상복구·스마트 벤딩머신까지 전국 현장 설치 전문. 상담 010-2069-1741">
 <title>밴딩벅 — 카드단말기·포스기·키오스크·자판기 설치 전문 | 상담 010-2069-1741</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2248%22 fill=%22%23FFFFFF%22 stroke=%22%23111111%22 stroke-width=%224%22/><text x=%2250%22 y=%2268%22 font-size=%2258%22 text-anchor=%22middle%22>🛰️</text></svg>">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <style>
 @font-face {
@@ -449,6 +450,36 @@ footer { background: var(--black); color: #8f8f8a; padding: 34px 0 100px; font-s
 .news-empty .emo { font-size: 30px; margin-bottom: 12px; display: block; }
 @media (max-width: 900px) { .news-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 560px) { .news-grid { grid-template-columns: 1fr; } }
+
+/* 갤러리 라이트박스 */
+.gallery-overlay {
+  display: none; position: fixed; inset: 0; z-index: 200;
+  background: rgba(0,0,0,0.9); align-items: center; justify-content: center;
+  padding: 20px;
+}
+.gallery-overlay.open { display: flex; }
+.gallery-box { position: relative; max-width: 900px; width: 100%; text-align: center; }
+.gallery-box img { max-width: 100%; max-height: 78vh; border-radius: 8px; display: block; margin: 0 auto; background: #111; }
+.gallery-caption { color: #fff; margin-top: 14px; font-size: 15px; font-weight: 700; }
+.gallery-counter { color: #bbb; margin-top: 4px; font-size: 13px; font-family: var(--mono); }
+.gallery-close {
+  position: absolute; top: -46px; right: 0; background: none; border: none;
+  color: #fff; font-size: 32px; cursor: pointer; line-height: 1; padding: 6px;
+}
+.gallery-nav {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  background: rgba(255,255,255,0.12); border: none; color: #fff;
+  font-size: 26px; width: 48px; height: 48px; border-radius: 50%; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.15s;
+}
+.gallery-nav:hover { background: rgba(255,255,255,0.25); }
+.gallery-nav.prev { left: -8px; }
+.gallery-nav.next { right: -8px; }
+@media (max-width: 700px) {
+  .gallery-nav.prev { left: 4px; } .gallery-nav.next { right: 4px; }
+  .gallery-close { top: -40px; }
+}
 </style>
 </head>
 <body>
@@ -657,70 +688,70 @@ footer { background: var(--black); color: #8f8f8a; padding: 34px 0 100px; font-s
     <div class="sec-head reveal">
       <span class="kicker">REVIEW</span>
       <h2 class="display">철거/원상복구 실제 시공 현장</h2>
-      <p>전국 각지 매장·상가 철거 현장입니다. (인물은 모자이크 처리했습니다)</p>
+      <p>전국 각지 매장·상가 철거 현장입니다. 사진을 누르면 더 많은 현장 사진을 볼 수 있습니다. (인물은 모자이크 처리했습니다)</p>
     </div>
     <div class="review-grid">
-      <div class="review reveal">
+      <div class="review reveal" style="cursor:pointer;" onclick="openDemoGallery('gwangju-jangjak')">
         <div class="ph"><img src="images/demo-gwangju-jangjak.jpg" alt="경기 광주 참나무장작구이 철거 현장" loading="lazy"></div>
         <div class="body"><span class="type">치킨전문점</span><div class="loc"><b>경기 광주 · 참나무장작구이</b></div></div>
       </div>
-      <div class="review reveal">
+      <div class="review reveal" style="cursor:pointer;" onclick="openDemoGallery('namyangju-vintage')">
         <div class="ph"><img src="images/demo-namyangju-vintage.jpg" alt="경기 남양주 빈티지마트 철거 현장" loading="lazy"></div>
         <div class="body"><span class="type">의류매장</span><div class="loc"><b>경기 남양주 · 빈티지마트</b></div></div>
       </div>
-      <div class="review reveal">
+      <div class="review reveal" style="cursor:pointer;" onclick="openDemoGallery('ansan-pizza')">
         <div class="ph"><img src="images/demo-ansan-pizza.jpg" alt="경기 안산 59쌀피자 철거 현장" loading="lazy"></div>
         <div class="body"><span class="type">피자전문점</span><div class="loc"><b>경기 안산 · 59쌀피자</b></div></div>
       </div>
-      <div class="review reveal">
+      <div class="review reveal" style="cursor:pointer;" onclick="openDemoGallery('yongin-chaektong')">
         <div class="ph"><img src="images/demo-yongin-chaektong.jpg" alt="경기 용인 책통 철거 현장" loading="lazy"></div>
         <div class="body"><span class="type">도서대여점</span><div class="loc"><b>경기 용인 · 책통</b></div></div>
       </div>
-      <div class="review reveal">
+      <div class="review reveal" style="cursor:pointer;" onclick="openDemoGallery('hanam-hair')">
         <div class="ph"><img src="images/demo-hanam-hair.jpg" alt="경기 하남 샹오르헤어 철거 현장" loading="lazy"></div>
         <div class="body"><span class="type">미용실</span><div class="loc"><b>경기 하남 · 샹오르헤어</b></div></div>
       </div>
-      <div class="review reveal">
+      <div class="review reveal" style="cursor:pointer;" onclick="openDemoGallery('gwangju-ppyeong')">
         <div class="ph"><img src="images/demo-gwangju-ppyeong.jpg" alt="광주 뿅간다 불뼈구이 철거 현장" loading="lazy"></div>
         <div class="body"><span class="type">음식점</span><div class="loc"><b>광주 · 뿅간다 불뼈구이</b></div></div>
       </div>
-      <div class="review reveal">
+      <div class="review reveal" style="cursor:pointer;" onclick="openDemoGallery('gwangju-ibeoboda')">
         <div class="ph"><img src="images/demo-gwangju-ibeoboda.jpg" alt="광주 입어보다 철거 현장" loading="lazy"></div>
         <div class="body"><span class="type">의류매장</span><div class="loc"><b>광주 · 입어보다</b></div></div>
       </div>
-      <div class="review reveal">
+      <div class="review reveal" style="cursor:pointer;" onclick="openDemoGallery('guro-toast')">
         <div class="ph"><img src="images/demo-guro-toast.jpg" alt="구로 이삭토스트 철거 현장" loading="lazy"></div>
         <div class="body"><span class="type">토스트전문점</span><div class="loc"><b>서울 구로 · 이삭토스트</b></div></div>
       </div>
-      <div class="review reveal">
+      <div class="review reveal" style="cursor:pointer;" onclick="openDemoGallery('kkakkaeng-pet')">
         <div class="ph"><img src="images/demo-kkakkaeng-pet.jpg" alt="까까댕 애견미용실 철거 현장" loading="lazy"></div>
         <div class="body"><span class="type">반려동물미용</span><div class="loc"><b>까까댕 애견미용실</b></div></div>
       </div>
-      <div class="review reveal">
+      <div class="review reveal" style="cursor:pointer;" onclick="openDemoGallery('daehan-susan')">
         <div class="ph"><img src="images/demo-daehan-susan.jpg" alt="대한수산 철거 현장" loading="lazy"></div>
         <div class="body"><span class="type">수산물판매점</span><div class="loc"><b>대한수산</b></div></div>
       </div>
-      <div class="review reveal">
+      <div class="review reveal" style="cursor:pointer;" onclick="openDemoGallery('nowon-chicken')">
         <div class="ph"><img src="images/demo-nowon-chicken.jpg" alt="서울 노원구 또봉이통닭 철거 현장" loading="lazy"></div>
         <div class="body"><span class="type">치킨전문점</span><div class="loc"><b>서울 노원구 · 또봉이통닭</b></div></div>
       </div>
-      <div class="review reveal">
+      <div class="review reveal" style="cursor:pointer;" onclick="openDemoGallery('seocho-karaoke')">
         <div class="ph"><img src="images/demo-seocho-karaoke.jpg" alt="서울 서초 스타노래방 철거 현장" loading="lazy"></div>
         <div class="body"><span class="type">노래연습장</span><div class="loc"><b>서울 서초 · 스타노래방</b></div></div>
       </div>
-      <div class="review reveal">
+      <div class="review reveal" style="cursor:pointer;" onclick="openDemoGallery('season1-pc')">
         <div class="ph"><img src="images/demo-season1-pc.jpg" alt="시즌원 피씨방 철거 현장" loading="lazy"></div>
         <div class="body"><span class="type">PC방</span><div class="loc"><b>시즌원 피씨방</b></div></div>
       </div>
-      <div class="review reveal">
+      <div class="review reveal" style="cursor:pointer;" onclick="openDemoGallery('incheon-dance')">
         <div class="ph"><img src="images/demo-incheon-dance.jpg" alt="인천 정미심무용학원 철거 현장" loading="lazy"></div>
         <div class="body"><span class="type">무용학원</span><div class="loc"><b>인천 · 정미심무용학원</b></div></div>
       </div>
-      <div class="review reveal">
+      <div class="review reveal" style="cursor:pointer;" onclick="openDemoGallery('nonsan-nice')">
         <div class="ph"><img src="images/demo-nonsan-nice.jpg" alt="충남 논산 나이스시 철거 현장" loading="lazy"></div>
         <div class="body"><span class="type">일식/초밥</span><div class="loc"><b>충남 논산 · 나이스시</b></div></div>
       </div>
-      <div class="review reveal">
+      <div class="review reveal" style="cursor:pointer;" onclick="openDemoGallery('cheonan-pho')">
         <div class="ph"><img src="images/demo-cheonan-pho.jpg" alt="충남 천안 성거하노이쌀국수 철거 현장" loading="lazy"></div>
         <div class="body"><span class="type">베트남쌀국수</span><div class="loc"><b>충남 천안 · 성거하노이쌀국수</b></div></div>
       </div>
@@ -1481,6 +1512,17 @@ footer { background: var(--black); color: #8f8f8a; padding: 34px 0 100px; font-s
 
 </main>
 
+<div class="gallery-overlay" id="galleryOverlay" onclick="if(event.target===this) closeDemoGallery()">
+  <div class="gallery-box">
+    <button class="gallery-close" onclick="closeDemoGallery()">×</button>
+    <button class="gallery-nav prev" onclick="demoGalleryStep(-1)">‹</button>
+    <img id="galleryImg" src="" alt="">
+    <button class="gallery-nav next" onclick="demoGalleryStep(1)">›</button>
+    <div class="gallery-caption" id="galleryCaption"></div>
+    <div class="gallery-counter" id="galleryCounter"></div>
+  </div>
+</div>
+
 <footer>
   <div class="wrap foot">
     <div>
@@ -1500,6 +1542,55 @@ const io = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
 }, { threshold: 0.12 });
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+const DEMO_GALLERY = {
+  'gwangju-jangjak': { name: '경기 광주 · 참나무장작구이', imgs: ['demo-gwangju-jangjak.jpg','demo-gwangju-jangjak-2.jpg','demo-gwangju-jangjak-3.jpg','demo-gwangju-jangjak-4.jpg'] },
+  'namyangju-vintage': { name: '경기 남양주 · 빈티지마트', imgs: ['demo-namyangju-vintage.jpg','demo-namyangju-vintage-2.jpg','demo-namyangju-vintage-3.jpg','demo-namyangju-vintage-4.jpg'] },
+  'ansan-pizza': { name: '경기 안산 · 59쌀피자', imgs: ['demo-ansan-pizza.jpg','demo-ansan-pizza-2.jpg','demo-ansan-pizza-3.jpg','demo-ansan-pizza-4.jpg'] },
+  'yongin-chaektong': { name: '경기 용인 · 책통', imgs: ['demo-yongin-chaektong.jpg','demo-yongin-chaektong-2.jpg','demo-yongin-chaektong-3.jpg','demo-yongin-chaektong-4.jpg'] },
+  'hanam-hair': { name: '경기 하남 · 샹오르헤어', imgs: ['demo-hanam-hair.jpg','demo-hanam-hair-2.jpg','demo-hanam-hair-3.jpg','demo-hanam-hair-4.jpg'] },
+  'gwangju-ppyeong': { name: '광주 · 뿅간다 불뼈구이', imgs: ['demo-gwangju-ppyeong.jpg','demo-gwangju-ppyeong-2.jpg','demo-gwangju-ppyeong-3.jpg','demo-gwangju-ppyeong-4.jpg'] },
+  'gwangju-ibeoboda': { name: '광주 · 입어보다', imgs: ['demo-gwangju-ibeoboda.jpg','demo-gwangju-ibeoboda-2.jpg','demo-gwangju-ibeoboda-3.jpg','demo-gwangju-ibeoboda-4.jpg'] },
+  'guro-toast': { name: '서울 구로 · 이삭토스트', imgs: ['demo-guro-toast.jpg','demo-guro-toast-2.jpg','demo-guro-toast-3.jpg','demo-guro-toast-4.jpg'] },
+  'kkakkaeng-pet': { name: '까까댕 애견미용실', imgs: ['demo-kkakkaeng-pet.jpg','demo-kkakkaeng-pet-2.jpg','demo-kkakkaeng-pet-3.jpg','demo-kkakkaeng-pet-4.jpg'] },
+  'daehan-susan': { name: '대한수산', imgs: ['demo-daehan-susan.jpg','demo-daehan-susan-2.jpg','demo-daehan-susan-3.jpg','demo-daehan-susan-4.jpg'] },
+  'nowon-chicken': { name: '서울 노원구 · 또봉이통닭', imgs: ['demo-nowon-chicken.jpg','demo-nowon-chicken-2.jpg','demo-nowon-chicken-3.jpg','demo-nowon-chicken-4.jpg'] },
+  'seocho-karaoke': { name: '서울 서초 · 스타노래방', imgs: ['demo-seocho-karaoke.jpg','demo-seocho-karaoke-2.jpg','demo-seocho-karaoke-3.jpg','demo-seocho-karaoke-4.jpg'] },
+  'season1-pc': { name: '시즌원 피씨방', imgs: ['demo-season1-pc.jpg','demo-season1-pc-2.jpg','demo-season1-pc-3.jpg','demo-season1-pc-4.jpg'] },
+  'incheon-dance': { name: '인천 · 정미심무용학원', imgs: ['demo-incheon-dance.jpg','demo-incheon-dance-2.jpg','demo-incheon-dance-3.jpg','demo-incheon-dance-4.jpg'] },
+  'nonsan-nice': { name: '충남 논산 · 나이스시', imgs: ['demo-nonsan-nice.jpg','demo-nonsan-nice-2.jpg','demo-nonsan-nice-3.jpg','demo-nonsan-nice-4.jpg'] },
+  'cheonan-pho': { name: '충남 천안 · 성거하노이쌀국수', imgs: ['demo-cheonan-pho.jpg','demo-cheonan-pho-2.jpg','demo-cheonan-pho-3.jpg','demo-cheonan-pho-4.jpg'] }
+};
+let demoGalleryKey = null;
+let demoGalleryIdx = 0;
+function openDemoGallery(key) {
+  demoGalleryKey = key;
+  demoGalleryIdx = 0;
+  renderDemoGallery();
+  document.getElementById('galleryOverlay').classList.add('open');
+}
+function closeDemoGallery() {
+  document.getElementById('galleryOverlay').classList.remove('open');
+}
+function demoGalleryStep(dir) {
+  const site = DEMO_GALLERY[demoGalleryKey];
+  if (!site) return;
+  demoGalleryIdx = (demoGalleryIdx + dir + site.imgs.length) % site.imgs.length;
+  renderDemoGallery();
+}
+function renderDemoGallery() {
+  const site = DEMO_GALLERY[demoGalleryKey];
+  if (!site) return;
+  document.getElementById('galleryImg').src = 'images/' + site.imgs[demoGalleryIdx];
+  document.getElementById('galleryCaption').textContent = site.name;
+  document.getElementById('galleryCounter').textContent = (demoGalleryIdx + 1) + ' / ' + site.imgs.length;
+}
+document.addEventListener('keydown', e => {
+  if (!document.getElementById('galleryOverlay').classList.contains('open')) return;
+  if (e.key === 'Escape') closeDemoGallery();
+  if (e.key === 'ArrowLeft') demoGalleryStep(-1);
+  if (e.key === 'ArrowRight') demoGalleryStep(1);
+});
 
 const TAB_VIEWS = {
   home: ['view-home'],
