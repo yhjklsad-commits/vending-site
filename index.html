@@ -506,7 +506,7 @@ footer { background: var(--black); color: #8f8f8a; padding: 34px 0 100px; font-s
       <a href="#demolition" onclick="switchSection('demolition');return false;">철거/원상복구</a>
       <a href="#pos-kiosk" onclick="switchSection('pos-kiosk');return false;">포스기·키오스크·테이블오더</a>
       <a href="#card-terminal" onclick="switchSection('card-terminal');return false;">카드단말기</a>
-      <a href="#product-news" onclick="switchSection('product-news');return false;">상품별 설명</a>
+      <a href="#product-news" onclick="switchSection('product-news');return false;">뉴스</a>
     </nav>
     <a class="tel" href="tel:010-2069-1741">☎ 010-2069-1741</a>
   </div>
@@ -1494,9 +1494,9 @@ footer { background: var(--black); color: #8f8f8a; padding: 34px 0 100px; font-s
 <section id="product-news">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="kicker">PRODUCT NEWS</span>
-      <h2>상품별 설명</h2>
-      <p>자판기·철거/원상복구·포스기·키오스크·카드단말기 관련 상세 설명과 설치 사례를 소개합니다.</p>
+      <span class="kicker">NEWS</span>
+      <h2>뉴스</h2>
+      <p>자판기·철거/원상복구·포스기·키오스크·카드단말기 관련 소식과 실제 설치 사례를 소개합니다.</p>
     </div>
     <div class="pos-tabs" role="tablist" id="productNewsTabs">
       <button class="pos-tab active" data-cat="all">전체</button>
@@ -1657,7 +1657,18 @@ function switchSection(tab) {
 
 /* 상품별 설명(뉴스) — 카드는 이후 이 배열에 추가하면 자동 렌더링됩니다.
    예: { cat:'service', catLabel:'자판기', img:'images/xxx.jpg', title:'...', excerpt:'...', date:'2026.08.12' } */
-const PRODUCT_NEWS = [];
+const PRODUCT_NEWS = [
+  { cat:'service', catLabel:'자판기', img:'https://images.unsplash.com/photo-1525610553991-2bede1a236e2?w=500&q=75&fit=crop', title:'무인 자판기 창업, 초기 비용부터 회수 기간까지', excerpt:'자판기 창업을 고민하시는 분들이 가장 먼저 궁금해하시는 건 초기 비용과 투자금 회수 기간입니다. 기종별 가격대와 실제 회수 사례를 기준으로 정리했습니다.', date:'2026.08.14' },
+  { cat:'service', catLabel:'자판기', img:'https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=500&q=75&fit=crop', title:'매장에 딱 맞는 자판기 기종 고르는 법', excerpt:'유동인구, 매장 면적, 판매 상품에 따라 적합한 자판기 기종이 달라집니다. 무작정 인기 기종을 고르기보다, 우리 매장에 맞는 기준으로 선택하는 방법을 소개합니다.', date:'2026.08.14' },
+  { cat:'service', catLabel:'자판기', img:'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=500&q=75&fit=crop', title:'자판기 설치 후 관리, 이렇게 편해집니다', excerpt:'설치만 해두고 관리가 힘들어 애먹는 사장님들이 많습니다. 원격 재고 확인, 매출 리포트 등 설치 이후 관리가 어떻게 편해지는지 정리했습니다.', date:'2026.08.13' },
+  { cat:'demolition', catLabel:'철거/원상복구', img:'https://images.unsplash.com/photo-1523474253046-8cd2748b5fd2?w=500&q=75&fit=crop', title:'폐업 시 자판기·설비 철거, 원상복구까지 한 번에', excerpt:'폐업을 앞두고 자판기와 각종 설비 철거, 원상복구까지 따로따로 업체를 알아보시는 분들이 많습니다. 한 번에 처리하면 시간과 비용을 모두 아낄 수 있습니다.', date:'2026.08.13' },
+  { cat:'demolition', catLabel:'철거/원상복구', img:'https://images.unsplash.com/photo-1556742111-a301076d9d18?w=500&q=75&fit=crop', title:'임대 매장 원상복구, 놓치기 쉬운 부분들', excerpt:'계약서상 원상복구 범위를 정확히 확인하지 않으면 나중에 분쟁이 생기기 쉽습니다. 임대 매장 철거·원상복구 시 미리 체크해야 할 부분들을 정리했습니다.', date:'2026.08.12' },
+  { cat:'pos-kiosk', catLabel:'포스기·키오스크·테이블오더', img:'https://images.unsplash.com/photo-1556741533-974f8e62a92d?w=500&q=75&fit=crop', title:'무인 매장 늘어나는 이유, 키오스크 도입 효과', excerpt:'인건비 부담과 운영 효율을 이유로 키오스크를 도입하는 매장이 빠르게 늘고 있습니다. 실제로 어떤 효과가 있는지, 도입 전 확인할 점을 정리했습니다.', date:'2026.08.12' },
+  { cat:'pos-kiosk', catLabel:'포스기·키오스크·테이블오더', img:'https://images.unsplash.com/photo-1556742044-3c52d6e88c62?w=500&q=75&fit=crop', title:'테이블오더 도입, 매장 매출에 실제로 도움될까요', excerpt:'테이블오더를 도입하면 주문 실수가 줄고 회전율이 올라간다는 이야기, 실제로는 어떨까요. 도입 매장들의 실제 변화를 바탕으로 정리했습니다.', date:'2026.08.11' },
+  { cat:'pos-kiosk', catLabel:'포스기·키오스크·테이블오더', img:'https://images.unsplash.com/photo-1556742393-d75f468bfcb0?w=500&q=75&fit=crop', title:'포스기 교체 타이밍, 이런 신호가 있다면', excerpt:'포스기가 자주 멈추거나 느려진다면 교체를 고민할 시점입니다. 노후 포스기를 계속 쓸 때의 리스크와 교체 판단 기준을 정리했습니다.', date:'2026.08.11' },
+  { cat:'card-terminal', catLabel:'카드단말기', img:'https://images.unsplash.com/photo-1556742212-5b321f3c261b?w=500&q=75&fit=crop', title:'카드단말기 의무 교체, 우리 매장도 해당될까요', excerpt:'보안 규정 변경으로 일부 구형 카드단말기는 교체가 필요합니다. 우리 매장이 해당되는지 확인하는 방법과 교체 절차를 정리했습니다.', date:'2026.08.10' },
+  { cat:'card-terminal', catLabel:'카드단말기', img:'https://images.unsplash.com/photo-1556909172-54557c7e4fb7?w=500&q=75&fit=crop', title:'카드단말기 하나로 여러 결제 수단 받는 법', excerpt:'신용카드는 물론 삼성페이, 제로페이 등 다양한 결제 수단을 단말기 하나로 받고 싶은 사장님들이 많습니다. 통합 결제 단말기 설치 방법을 소개합니다.', date:'2026.08.10' },
+];
 function renderProductNews(filter) {
   const grid = document.getElementById('productNewsGrid');
   const empty = document.getElementById('productNewsEmpty');
