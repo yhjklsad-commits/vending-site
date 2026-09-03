@@ -15,15 +15,15 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://vendingbuk.freecellery.com/news/blog-83.html</loc>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://vendingbuk.freecellery.com/news/blog-82.html</loc>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
     <loc>https://vendingbuk.freecellery.com/news/blog-81.html</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://vendingbuk.freecellery.com/news/blog-65.html</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://vendingbuk.freecellery.com/news/blog-64.html</loc>
     <changefreq>weekly</changefreq>
   </url>
   <url>
@@ -84,14 +84,6 @@
   </url>
   <url>
     <loc>https://vendingbuk.freecellery.com/news/blog-66.html</loc>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://vendingbuk.freecellery.com/news/blog-65.html</loc>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://vendingbuk.freecellery.com/news/blog-64.html</loc>
     <changefreq>weekly</changefreq>
   </url>
   <url>
@@ -207,7 +199,15 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
+    <loc>https://vendingbuk.freecellery.com/news/blog-83.html</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
     <loc>https://vendingbuk.freecellery.com/news/blog-63.html</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://vendingbuk.freecellery.com/news/blog-82.html</loc>
     <changefreq>weekly</changefreq>
   </url>
   <url>
