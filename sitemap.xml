@@ -642,4 +642,20 @@
     <loc>https://vendingbuk.freecellery.com/news/blog-157.html</loc>
     <changefreq>weekly</changefreq>
   </url>
+  <url>
+    <loc>https://vendingbuk.freecellery.com/category-smart.html</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://vendingbuk.freecellery.com/category-digital.html</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://vendingbuk.freecellery.com/category-multi.html</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://vendingbuk.freecellery.com/category-unmanned.html</loc>
+    <changefreq>weekly</changefreq>
+  </url>
 </urlset>
