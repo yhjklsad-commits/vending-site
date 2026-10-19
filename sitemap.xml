@@ -658,4 +658,8 @@
     <loc>https://vendingbuk.freecellery.com/category-unmanned.html</loc>
     <changefreq>weekly</changefreq>
   </url>
+  <url>
+    <loc>https://vendingbuk.freecellery.com/news/blog-158.html</loc>
+    <changefreq>weekly</changefreq>
+  </url>
 </urlset>
